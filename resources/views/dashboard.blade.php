@@ -12,13 +12,13 @@
                     {{ __("Welcome Admin: You're logged in!") }}
                     <br>
                     <a href="{{('product')}}" class="text-blue-500 hover:text-blue-950"> Product Page
-
-                    
                     </a>
                     <br>
                     <a href="{{('')}}" class="text-blue-500 hover:text-blue-950"> Afspraken page
+                    </a>
 
-                    
+                    <br>
+                    <a href="{{('')}}" class="text-blue-500 hover:text-blue-950"> Home Page
                     </a>
                 </div>
             </div>
