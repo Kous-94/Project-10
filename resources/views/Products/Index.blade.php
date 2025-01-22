@@ -50,7 +50,11 @@
     <button type="button" >
         <a href="{{ route('product.create') }}">Create a new product</a>
     </button>
-    
+    <br>
+                   <button> <a href="{{('dashboard')}}" class="text-blue-500 hover:text-blue-950"> Dashboard
+
+                    
+                    </a></button>
     </div>
 </body>
 </html>
