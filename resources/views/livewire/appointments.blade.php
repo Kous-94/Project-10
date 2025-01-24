@@ -1,26 +1,42 @@
-<div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-    <h1 class="text-2xl font-medium text-gray-900 mb-4">Appointments</h1>
+<div>
+    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Appointments</h1>
+            <!-- Add Appointment Button -->
+            <!-- <button wire:click="openModal" class="bg-gray-500 text-black px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-200">
+                Add Appointment
+            </button> -->
+            @livewire('create-appointment')           
+         </div>
+        </div>
 
-    @if (count($appointments) > 0)
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead>
-                <tr>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-                @foreach ($appointments as $appointment)
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $appointment['id'] }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $appointment['user']['name'] ?? 'N/A' }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $appointment['date'] }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <p>No appointments found.</p>
-    @endif
+        @if ($appointments->isEmpty())
+            <p class="text-gray-600">No appointments found.</p>
+        @else
+            <div class="overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Title</th>
+                            <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Description</th>
+                            <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Date</th>
+                            <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">User</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        @foreach ($appointments as $appointment)
+                            <tr class="hover:bg-gray-50 transition duration-200">
+                                <td class="py-3 px-4 text-sm text-gray-700">{{ $appointment->title }}</td>
+                                <td class="py-3 px-4 text-sm text-gray-700">{{ $appointment->description ?? 'N/A' }}</td>
+                                <td class="py-3 px-4 text-sm text-gray-700">
+                                    {{ $appointment->appointment_date->format('Y-m-d H:i') }}
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-700">{{ $appointment->user->name }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @endif
+    </div>
 </div>
