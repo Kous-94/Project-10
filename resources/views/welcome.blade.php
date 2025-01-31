@@ -57,7 +57,9 @@
                             </nav>
                         @endif
                     </header>
-
+                        <section>
+                            <h1 class="h-[700px] text-transparent bg-transparent">.</h1>
+                        </section>
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                     © Copyrights 2025 - Oday Alkabra And Kousae Albouni 
                     </footer>
