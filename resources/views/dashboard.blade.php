@@ -18,7 +18,7 @@
                     </a>
 
                     <br>
-                    <a href="{{('')}}" class="text-blue-500 hover:text-blue-950"> Home Page
+                    <a href="{{('home')}}" class="text-blue-500 hover:text-blue-950"> Home Page
                     </a>
                 </div>
             </div>
