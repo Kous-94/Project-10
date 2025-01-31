@@ -30,7 +30,7 @@
         <p class="mt-4">PProfessionele knipbeurten & verzorgingsdiensten.</p>
     </section>
     
-    <!-- About Section -->
+    <!-- Over Ons/about Section -->
 
     <section id="about" class="py-10 px-6 text-center bg-gray-900 text-yellow-500 max-w-md mx-auto">
     
@@ -50,19 +50,52 @@ Of je nu een vaste klant bent of voor het eerst langskomt, je bent van harte wel
         <h2 class="text-3xl font-semibold">Prijzen</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             <div class="bg-black p-4 shadow-lg border border-yellow-500">
-                <h3 class="text-xl font-bold">Product 1</h3>
-                <p>High-quality hair gel</p>
+                <h3 class="text-xl font-bold">Knippen</h3>
+                <p>€40,-</p>
             </div>
             <div class="bg-black p-4 shadow-lg border border-yellow-500">
-                <h3 class="text-xl font-bold">Product 2</h3>
-                <p>Premium beard oil</p>
+                <h3 class="text-xl font-bold">Scheren</h3>
+                <p>€35,-</p>
             </div>
             <div class="bg-black p-4 shadow-lg border border-yellow-500">
-                <h3 class="text-xl font-bold">Product 3</h3>
-                <p>Strong-hold pomade</p>
+                <h3 class="text-xl font-bold">Baardtrim</h3>
+                <p>€22,-</p>
             </div>
-        </div>
+            <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Baardtrim deluxe</h3>
+                <p>€33,-</p>
+            </div>
+            <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Tondeuse coup</h3>
+                <p>€25,-</p>
+            </div>
+            
+            <!-- <section id="Prijzen" class="py-10 px-6 text-center bg-gray-900 text-yellow-500">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Knippen + baardtrim</h3>
+                <p>€49,-</p>
+            </div>
+            <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Knippen + baardtrim deluxe</h3>
+                <p>€61,-</p>
+            </div>
+            </div>
+        </div> -->
     </section>
+    <section id="Combinaties" class="py-10 px-6 text-center bg-gray-900 text-yellow-500">
+        <h2 class="text-3xl font-semibold">Combinaties</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6"></div>
+        <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Knippen + baardtrim</h3>
+                <p>€49,-</p>
+            </div>
+            <div class="bg-black p-4 shadow-lg border border-yellow-500">
+                <h3 class="text-xl font-bold">Knippen + baardtrim deluxe</h3>
+                <p>€61,-</p>
+            </div>
+        </section>
 
     <!-- Openingstijden Section -->
     <section id="Openingstijden" class="py-10 px-6 text-center bg-black text-yellow-500">
