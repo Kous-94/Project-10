@@ -16,6 +16,8 @@ Route::middleware([
 ])->group(function () {
 
 Route::apiResource('users', UserController::class);
-Route::apiResource('appointments', AppointmentController::class);
-Route::apiResource('products', ProductController::class);
 });
+
+Route::apiResource('products', ProductController::class);
+
+Route::apiResource('appointments', AppointmentController::class);

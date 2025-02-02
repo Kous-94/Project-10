@@ -4,7 +4,8 @@ use App\Livewire\Products;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $products = \App\Models\Product::all(); // Fetch all products
+    return view('welcome', compact('products'));
 });
 
 Route::middleware([
