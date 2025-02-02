@@ -23,14 +23,14 @@ class Appointments extends Component
     public function refreshAppointments()
     {
         // Fetch all appointments with user data
-        $this->appointments = Appointment::with('user')->get();
+        $this->appointments = Appointment::with(['user', 'product'])->get();
     }
 
 
     // View Appointment
     public function viewAppointment($id)
     {
-        $this->selectedAppointment = Appointment::with('user')->find($id);
+        $this->selectedAppointment = Appointment::with(['user', 'product'])->find($id);
         $this->showAppointmentModal = true; // Show the modal
     }
 

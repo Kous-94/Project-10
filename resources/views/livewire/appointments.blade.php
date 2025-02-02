@@ -17,6 +17,7 @@
                     <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Description</th>
                     <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Date</th>
                     <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">User</th>
+                    <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Product</th> <!-- Added Product Column -->
                     <th class="py-3 px-4 text-left text-sm font-semibold text-gray-700">Actions</th>
                 </tr>
             </thead>
@@ -29,6 +30,9 @@
                         {{ $appointment->appointment_date->format('Y-m-d H:i') }}
                     </td>
                     <td class="py-3 px-4 text-sm text-gray-700">{{ $appointment->user->name }}</td>
+                    <td class="py-3 px-4 text-sm text-gray-700">
+                        {{ $appointment->product ? $appointment->product->name : 'No Product' }}
+                    </td> <!-- Display Product Name -->
                     <td class="py-3 px-4 text-sm text-gray-700">
                         <!-- View Button -->
                         <button wire:click="viewAppointment({{ $appointment->id }})" class="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition duration-200">
@@ -62,6 +66,9 @@
                     <p><strong>Description:</strong> {{ $selectedAppointment->description ?? 'N/A' }}</p>
                     <p><strong>Date:</strong> {{ $selectedAppointment->appointment_date->format('Y-m-d H:i') }}</p>
                     <p><strong>User:</strong> {{ $selectedAppointment->user->name }}</p>
+                    <p><strong>Product:</strong>
+                        {{ $selectedAppointment->product ? $selectedAppointment->product->name : 'No Product' }}
+                    </p> <!-- Display Product Name -->
                 </div>
                 <div class="flex justify-end mt-4">
                     <button wire:click="closeModal" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Close</button>
@@ -86,7 +93,9 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Trigger Livewire's deleteAppointment method
-                Livewire.dispatch('delete-appointment', { id: appointmentId });
+                Livewire.dispatch('delete-appointment', {
+                    id: appointmentId
+                });
             }
         });
     }
