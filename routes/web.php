@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('welcome', compact('products'));
 });
 
+
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
