@@ -79,6 +79,26 @@
                     </div>
                 </header>
 
+                <!-- Navigation -->
+                @if (Route::has('login'))
+                <nav class="-mx-3 flex flex-1 justify-end">
+                    @auth
+                    <a
+                        href="{{ url('/dashboard') }}"
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                        Dashboard
+                    </a>
+                    @else
+                    <a
+                        href="{{ route('login') }}"
+                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                        Admin Login
+                    </a>
+                    @endauth
+                </nav>
+                @endif
+                </header>
+
                 <!-- Hero Section -->
                 <section class="text-center py-16">
                     <h1 class="text-4xl font-bold text-black dark:text-white">
@@ -138,33 +158,33 @@
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-        // Function to fetch products from the API
-        function fetchProducts() {
-            fetch('/api/products') // Change to your correct API endpoint
-                .then(response => response.json())
-                .then(data => {
-                    // Get the product dropdown element
-                    const productSelect = document.getElementById('product_id');
+            // Function to fetch products from the API
+            function fetchProducts() {
+                fetch('/api/products') // Change to your correct API endpoint
+                    .then(response => response.json())
+                    .then(data => {
+                        // Get the product dropdown element
+                        const productSelect = document.getElementById('product_id');
 
-                    // Clear the current loading message
-                    productSelect.innerHTML = '<option value="" disabled selected>Select a product</option>';
+                        // Clear the current loading message
+                        productSelect.innerHTML = '<option value="" disabled selected>Select a product</option>';
 
-                    // Loop through the products and create option elements
-                    data.forEach(product => {
-                        const option = document.createElement('option');
-                        option.value = product.id; // Product ID from the API
-                        option.textContent = product.name; // Product name from the API
-                        productSelect.appendChild(option);
+                        // Loop through the products and create option elements
+                        data.forEach(product => {
+                            const option = document.createElement('option');
+                            option.value = product.id; // Product ID from the API
+                            option.textContent = product.name; // Product name from the API
+                            productSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching products:', error);
                     });
-                })
-                .catch(error => {
-                    console.error('Error fetching products:', error);
-                });
-        }
+            }
 
-        // Call the function to fetch products when the page loads
-        fetchProducts();
-    });
+            // Call the function to fetch products when the page loads
+            fetchProducts();
+        });
     </script>
 </body>
 
